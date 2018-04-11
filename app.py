@@ -53,8 +53,6 @@ def handle_message(event):
                 uri='http://example.com/'
             )
         ]
-    ))
-    return ''
-
+    )))
 if __name__ == '__main__':
     app.run()
