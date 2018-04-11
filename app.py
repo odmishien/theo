@@ -41,7 +41,7 @@ def handle_message(event):
 @handler.add(JoinEvent)
 def shiyoya(event):
     scheduler = sched.scheduler(time.time, time.sleep)
-    scheduler.enter(10,1,line_bot_api.reply_message(
+    scheduler.enter(15,2,line_bot_api.reply_message(
         event.reply_token,
         TemplateSendMessage(
             alt_text='Confirm template',
