@@ -43,16 +43,16 @@ def handle_message(event):
         TemplateSendMessage(
             alt_text='Confirm template',
             template=ConfirmTemplate(
-            text='Are you sure?',
+            text='明日、飲み会しよや！！',
             actions=[
             PostbackTemplateAction(
-                label='postback',
-                text='postback text',
+                label='アリ',
+                text='アリ',
                 data='action=buy&itemid=1'
             ),
             MessageTemplateAction(
-                label='message',
-                text='message text'
+                label='ナシ',
+                text='ナシ'
             )
         ]
     )
