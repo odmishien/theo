@@ -7,7 +7,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent,JoinEvent, TextMessage, TextSendMessage,ImageMessage,ImageSendMessage,TemplateSendMessage,ButtonsTemplate,PostbackTemplateAction,MessageTemplateAction,URITemplateAction
+    MessageEvent,JoinEvent, TextMessage, TextSendMessage,ImageMessage,ImageSendMessage,TemplateSendMessage,ButtonsTemplate,PostbackTemplateAction,MessageTemplateAction
 )
 import datetime
 
@@ -40,11 +40,11 @@ def handle_message(event):
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        TemplateSendMessage(alt_text='',template=ButtonsTemplate(
-        thumbnail_image_url='https://example.com/image.jpg',
-        title='Menu',
-        text='Please select',
-        actions=[
+        TemplateSendMessage(
+            alt_text='Confirm template',
+            template=ConfirmTemplate(
+            text='Are you sure?',
+            actions=[
             PostbackTemplateAction(
                 label='postback',
                 text='postback text',
@@ -53,12 +53,9 @@ def handle_message(event):
             MessageTemplateAction(
                 label='message',
                 text='message text'
-            ),
-            URITemplateAction(
-                label='uri',
-                uri='http://example.com/'
             )
         ]
-    )))
+    )
+))
 if __name__ == '__main__':
     app.run()
