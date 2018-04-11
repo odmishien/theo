@@ -38,7 +38,7 @@ def shiyoya(event):
     # line_bot_api.reply_message(
     #     event.reply_token,
     #     TextSendMessage(text="月に2回、突然飲み会セッティングするからよろしく頼むわ！！"))
-    Id = event.groupId
+    Id = event.source.group_id
     print(Id)
     scheduler = sched.scheduler(time.time, time.sleep)
     print(scheduler)
