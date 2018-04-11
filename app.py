@@ -35,11 +35,12 @@ def callback():
 
 @handler.add(JoinEvent)
 def shiyoya(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text="月に2回、突然飲み会セッティングするからよろしく頼むわ！！"))
+    # line_bot_api.reply_message(
+    #     event.reply_token,
+    #     TextSendMessage(text="月に2回、突然飲み会セッティングするからよろしく頼むわ！！"))
         
     scheduler = sched.scheduler(time.time, time.sleep)
+    print(scheduler)
     scheduler.enter(15,2,line_bot_api.reply_message(
         event.reply_token,
         TemplateSendMessage(
