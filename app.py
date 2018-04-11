@@ -30,6 +30,12 @@ def callback():
         abort(400)
 
     return ''
+
+@handler.add(MessageEvent, message=TextMessage)
+def handle_message(event):
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text="画像を送ってクレメンス"))
 @handler.add(JoinEvent)
 def handle_message(event):
     line_bot_api.reply_message(
