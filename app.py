@@ -15,7 +15,6 @@ app = Flask(__name__)
 line_bot_api = LineBotApi('6w+yDVbtosggFA+eHjGvxbdxvtiNnbo2Szpet/7pvsF2VIoNpMR29zVUGCKnheQdBWJBWk1hnNVc2UIjooUdn/vbDm6pHU2EZkG9gUXdjPkoeVUIePuKqipmQYExGPlKeQxYIVv1oU6wbtQXjMBR5gdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('9ae6932fad2fa65e7020d34b3d41d2a2')
 groups = []
-print(groups)
 @app.route("/callback", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
@@ -36,7 +35,6 @@ def shiyoya(event):
     Id = event.source.user_id
     global groups
     groups.append(Id)
-    print(groups)
 
 if __name__ == '__main__':
     app.run()
