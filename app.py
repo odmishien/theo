@@ -36,7 +36,7 @@ def callback():
 
 @handler.add(MessageEvent)
 def shiyoya(event):
-    Id = event.source.group_id
+    Id = event.source.user_id
     groups.append(Id)
     print(groups)
 
