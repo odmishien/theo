@@ -14,7 +14,7 @@ import sched
 import time
 
 app = Flask(__name__)
-
+Id = ""
 line_bot_api = LineBotApi('6w+yDVbtosggFA+eHjGvxbdxvtiNnbo2Szpet/7pvsF2VIoNpMR29zVUGCKnheQdBWJBWk1hnNVc2UIjooUdn/vbDm6pHU2EZkG9gUXdjPkoeVUIePuKqipmQYExGPlKeQxYIVv1oU6wbtQXjMBR5gdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('9ae6932fad2fa65e7020d34b3d41d2a2')
 
@@ -38,11 +38,10 @@ def shiyoya(event):
     # line_bot_api.reply_message(
     #     event.reply_token,
     #     TextSendMessage(text="月に2回、突然飲み会セッティングするからよろしく頼むわ！！"))
+    global Id
     Id = event.source.group_id
     print(Id)
-    scheduler = sched.scheduler(time.time, time.sleep)
-    print(scheduler)
-    scheduler.enter(15,2,line_bot_api.reply_message(
+    line_bot_api.reply_message(
         event.reply_token,
         TemplateSendMessage(
             alt_text='Confirm template',
@@ -60,8 +59,7 @@ def shiyoya(event):
             )
         ]
     )
-)))
-    
+))
     
 if __name__ == '__main__':
     app.run()
