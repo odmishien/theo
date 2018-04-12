@@ -38,8 +38,8 @@ def callback():
 def shiyoya(event):
     Id = event.source.group_id
     groups.append(Id)
-    print(groups)
 
 
 if __name__ == '__main__':
     app.run()
+    print(groups)
