@@ -12,11 +12,12 @@ from linebot.models import (
 import datetime
 import sched
 import time
+import random
 
 app = Flask(__name__)
-Id = ""
 line_bot_api = LineBotApi('6w+yDVbtosggFA+eHjGvxbdxvtiNnbo2Szpet/7pvsF2VIoNpMR29zVUGCKnheQdBWJBWk1hnNVc2UIjooUdn/vbDm6pHU2EZkG9gUXdjPkoeVUIePuKqipmQYExGPlKeQxYIVv1oU6wbtQXjMBR5gdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('9ae6932fad2fa65e7020d34b3d41d2a2')
+groups = []
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -33,14 +34,14 @@ def callback():
 
     return ''
 
-@handler.add(JoinEvent)
+@handler.add(MessageEvent)
 def shiyoya(event):
     # line_bot_api.reply_message(
     #     event.reply_token,
     #     TextSendMessage(text="月に2回、突然飲み会セッティングするからよろしく頼むわ！！"))
-    global Id
     Id = event.source.group_id
-    print(Id)
+    groups.append(Id)
+    print(groups)
     line_bot_api.reply_message(
         event.reply_token,
         TemplateSendMessage(
@@ -60,6 +61,26 @@ def shiyoya(event):
         ]
     )
 ))
-    
+
+def push(id):
+    num = random.randrange(30)
+    if num < 2:
+        line_bot_api.push_message(id,TemplateSendMessage(
+                alt_text='Confirm template',
+                template=ConfirmTemplate(
+                text='明日、飲み会しよや！！',
+                actions=[
+                PostbackTemplateAction(
+                    label='アリ',
+                    text='アリ',
+                    data='action=buy&itemid=1'
+                ),
+                MessageTemplateAction(
+                    label='ナシ',
+                    text='ナシ'
+                )
+            ]
+        )))
+
 if __name__ == '__main__':
     app.run()
