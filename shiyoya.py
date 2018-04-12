@@ -11,7 +11,7 @@ from linebot.models import (
 for id in groups:
     # num = random.randrange(30)
     # if num < 2:
-    line_bot_api.push_message(id,TemplateSendMessage(
+    line_bot_api.push_message("Cf94a2ae3d4a40786571ab19d6b3c3bf8",TemplateSendMessage(
         alt_text='Confirm template',
         template=ConfirmTemplate(
         text='明日、飲み会しよや！！',
