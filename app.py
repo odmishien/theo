@@ -36,9 +36,8 @@ def shiyoya(event):
     Id = event.source.user_id
     global groups
     groups.append(Id)
-    print(groups)
 
-
+print(groups)
 if __name__ == '__main__':
     app.run()
     print(groups)
