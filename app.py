@@ -38,6 +38,6 @@ def shiyoya(event):
     groups.append(Id)
     print(groups)
 
-
+print(groups)
 if __name__ == '__main__':
     app.run()
