@@ -19,10 +19,10 @@ line_bot_api = LineBotApi('6w+yDVbtosggFA+eHjGvxbdxvtiNnbo2Szpet/7pvsF2VIoNpMR29
 #     handler.handle(body, signature)
 # except InvalidSignatureError:
 #     abort(400)
-for id in groups:
+# for id in groups:
     # num = random.randrange(30)
     # if num < 2:
-    line_bot_api.push_message("Cf94a2ae3d4a40786571ab19d6b3c3bf8",TemplateSendMessage(
+line_bot_api.push_message("Cf94a2ae3d4a40786571ab19d6b3c3bf8",TemplateSendMessage(
         alt_text='Confirm template',
         template=ConfirmTemplate(
         text='明日、飲み会しよや！！',
