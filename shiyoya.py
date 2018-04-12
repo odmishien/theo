@@ -1,4 +1,4 @@
-from .app import groups
+from app import groups
 from linebot import (
     LineBotApi, WebhookHandler
 )
