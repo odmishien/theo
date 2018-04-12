@@ -33,8 +33,9 @@ def callback():
 @handler.add(MessageEvent)
 def shiyoya(event):
     Id = event.source.user_id
+    print(Id)
     ids = open("ids.txt",'a')
-    ids.write(Id)
+    ids.write(str(Id) + "\n")
     ids.close()
 
 if __name__ == '__main__':
