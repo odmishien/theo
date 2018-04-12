@@ -34,9 +34,9 @@ def callback():
 def shiyoya(event):
     Id = event.source.user_id
     print(Id)
-    ids = open("ids.txt",'a')
-    ids.write(str(Id) + "\n")
-    ids.close()
+    f = open("ids.txt",'a')
+    f.write(str(Id) + "\n")
+    f.close()
 
 if __name__ == '__main__':
     app.run()
