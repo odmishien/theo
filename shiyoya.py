@@ -1,4 +1,3 @@
-from app import groups
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -19,7 +18,10 @@ line_bot_api = LineBotApi('6w+yDVbtosggFA+eHjGvxbdxvtiNnbo2Szpet/7pvsF2VIoNpMR29
 #     handler.handle(body, signature)
 # except InvalidSignatureError:
 #     abort(400)
-for id in groups:
+f = open("ids.txt","r")
+ids = f.readlines()
+print(ids)
+for id in ids:
     # num = random.randrange(30)
     # if num < 2:
     line_bot_api.push_message(id,TemplateSendMessage(
@@ -38,4 +40,3 @@ for id in groups:
                 )
             ]
         )))
-print(groups)
