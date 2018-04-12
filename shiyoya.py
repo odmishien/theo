@@ -8,6 +8,17 @@ from linebot.exceptions import (
 from linebot.models import (
     MessageEvent,JoinEvent, TextMessage, TextSendMessage,ImageMessage,ImageSendMessage,TemplateSendMessage,ConfirmTemplate,PostbackTemplateAction,MessageTemplateAction
 )
+
+line_bot_api = LineBotApi('6w+yDVbtosggFA+eHjGvxbdxvtiNnbo2Szpet/7pvsF2VIoNpMR29zVUGCKnheQdBWJBWk1hnNVc2UIjooUdn/vbDm6pHU2EZkG9gUXdjPkoeVUIePuKqipmQYExGPlKeQxYIVv1oU6wbtQXjMBR5gdB04t89/1O/w1cDnyilFU=')
+# signature = request.headers['X-Line-Signature']
+
+# # get request body as text
+# body = request.get_data(as_text=True)
+# # handle webhook body
+# try:
+#     handler.handle(body, signature)
+# except InvalidSignatureError:
+#     abort(400)
 for id in groups:
     # num = random.randrange(30)
     # if num < 2:
