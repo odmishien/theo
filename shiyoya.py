@@ -18,7 +18,7 @@ line_bot_api = LineBotApi('6w+yDVbtosggFA+eHjGvxbdxvtiNnbo2Szpet/7pvsF2VIoNpMR29
 #     handler.handle(body, signature)
 # except InvalidSignatureError:
 #     abort(400)
-f = open("./ids.txt","r")
+f = open("ids.txt","r")
 ids = f.readlines()
 print(ids)
 for id in ids:
