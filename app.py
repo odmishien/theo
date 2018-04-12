@@ -34,7 +34,7 @@ def callback():
 
     return ''
 
-@handler.add(JoinEvent)
+@handler.add(MessageEvent)
 def shiyoya(event):
     Id = event.source.group_id
     groups.append(Id)
