@@ -34,53 +34,12 @@ def callback():
 
     return ''
 
-@handler.add(MessageEvent)
+@handler.add(JoinEvent)
 def shiyoya(event):
-    # line_bot_api.reply_message(
-    #     event.reply_token,
-    #     TextSendMessage(text="月に2回、突然飲み会セッティングするからよろしく頼むわ！！"))
     Id = event.source.group_id
     groups.append(Id)
     print(groups)
-    line_bot_api.reply_message(
-        event.reply_token,
-        TemplateSendMessage(
-            alt_text='Confirm template',
-            template=ConfirmTemplate(
-            text='明日、飲み会しよや！！',
-            actions=[
-            PostbackTemplateAction(
-                label='アリ',
-                text='アリ',
-                data='action=buy&itemid=1'
-            ),
-            MessageTemplateAction(
-                label='ナシ',
-                text='ナシ'
-            )
-        ]
-    )
-))
 
-def push(id):
-    num = random.randrange(30)
-    if num < 2:
-        line_bot_api.push_message(id,TemplateSendMessage(
-                alt_text='Confirm template',
-                template=ConfirmTemplate(
-                text='明日、飲み会しよや！！',
-                actions=[
-                PostbackTemplateAction(
-                    label='アリ',
-                    text='アリ',
-                    data='action=buy&itemid=1'
-                ),
-                MessageTemplateAction(
-                    label='ナシ',
-                    text='ナシ'
-                )
-            ]
-        )))
 
 if __name__ == '__main__':
     app.run()
