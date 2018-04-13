@@ -34,7 +34,7 @@ def callback():
 def shiyoya(event):
     Id = event.source.user_id
     print(Id)
-    f = open("/tmp/ids.txt",'w')
+    f = open("/tmp/ids.txt",'a')
     f.write(str(Id) + "\n")
     f.close()
 
