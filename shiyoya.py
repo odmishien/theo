@@ -7,6 +7,7 @@ from linebot.exceptions import (
 from linebot.models import (
     MessageEvent,JoinEvent, TextMessage, TextSendMessage,ImageMessage,ImageSendMessage,TemplateSendMessage,ConfirmTemplate,PostbackTemplateAction,MessageTemplateAction
 )
+from app import temp
 
 line_bot_api = LineBotApi('6w+yDVbtosggFA+eHjGvxbdxvtiNnbo2Szpet/7pvsF2VIoNpMR29zVUGCKnheQdBWJBWk1hnNVc2UIjooUdn/vbDm6pHU2EZkG9gUXdjPkoeVUIePuKqipmQYExGPlKeQxYIVv1oU6wbtQXjMBR5gdB04t89/1O/w1cDnyilFU=')
 # signature = request.headers['X-Line-Signature']
@@ -18,8 +19,8 @@ line_bot_api = LineBotApi('6w+yDVbtosggFA+eHjGvxbdxvtiNnbo2Szpet/7pvsF2VIoNpMR29
 #     handler.handle(body, signature)
 # except InvalidSignatureError:
 #     abort(400)
-f = open("/tmp/ids.txt","r")
-ids = f.readlines()
+print(temp.read())
+ids = temp.read()
 print(ids)
 for id in ids:
     # num = random.randrange(30)
