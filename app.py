@@ -35,7 +35,6 @@ def shiyoya(event):
     print(Id)
     f = open("/tmp/ids.txt",'a')
     f.write(str(Id) + "\n")
-    f.close()
 
 if __name__ == '__main__':
     app.run()
