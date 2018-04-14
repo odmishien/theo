@@ -37,8 +37,8 @@ def shiyoya(event):
     print(Id)
     f = tempfile.TemporaryFile(mode='w+t')
     f.write(Id + "\n")
-    temp.seek(0)
-    temp.close()
+    f.seek(0)
+    f.close()
 
 if __name__ == '__main__':
     app.run()
