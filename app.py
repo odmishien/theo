@@ -43,9 +43,8 @@ def callback():
 def shiyoya(event):
     groupid = event.source.user_id
     print(groupid)
-    if not db.session.query(Ids).filter(Ids.groupid == groupid).count():
-        reg = Ids(groupid)
-        db.session.add(reg)
-        db.session.commit()
+    reg = Ids(groupid)
+    db.session.add(reg)
+    db.session.commit()
 if __name__ == '__main__':
     app.run()
