@@ -22,22 +22,22 @@ line_bot_api = LineBotApi('6w+yDVbtosggFA+eHjGvxbdxvtiNnbo2Szpet/7pvsF2VIoNpMR29
 #     abort(400)
 ids = Ids.query.all()
 print(ids)
-# for id in ids:
-#     # num = random.randrange(30)
-#     # if num < 2:
-#     line_bot_api.push_message(id,TemplateSendMessage(
-#         alt_text='Confirm template',
-#         template=ConfirmTemplate(
-#         text='明日、飲み会しよや！！',
-#             actions=[
-#                 PostbackTemplateAction(
-#                     label='アリ',
-#                     text='アリ',
-#                     data='action=buy&itemid=1'
-#                 ),
-#                 MessageTemplateAction(
-#                     label='ナシ',
-#                     text='ナシ'
-#                 )
-#             ]
-#         )))
+for id in ids:
+    # num = random.randrange(30)
+    # if num < 2:
+    line_bot_api.push_message(id.groupid,TemplateSendMessage(
+        alt_text='Confirm template',
+        template=ConfirmTemplate(
+        text='明日、飲み会しよや！！',
+            actions=[
+                PostbackTemplateAction(
+                    label='アリ',
+                    text='アリ',
+                    data='action=buy&itemid=1'
+                ),
+                MessageTemplateAction(
+                    label='ナシ',
+                    text='ナシ'
+                )
+            ]
+        )))
