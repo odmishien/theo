@@ -44,7 +44,7 @@ def callback():
 def shiyoya(event):
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text="月に2回ランダムで突然飲みたがります！どうぞよろしく！！")
+        TextSendMessage(text="月に2回ランダムで突然飲みたがります！どうぞよろしく！！"))
     groupid = event.source.group_id
     reg = Ids(groupid)
     db.session.add(reg)
