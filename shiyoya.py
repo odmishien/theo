@@ -21,7 +21,6 @@ line_bot_api = LineBotApi('6w+yDVbtosggFA+eHjGvxbdxvtiNnbo2Szpet/7pvsF2VIoNpMR29
 # except InvalidSignatureError:
 #     abort(400)
 ids = Ids.query.all()
-print(ids)
 for id in ids:
     # num = random.randrange(30)
     # if num < 2:

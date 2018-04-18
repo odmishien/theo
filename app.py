@@ -40,10 +40,9 @@ def callback():
 
     return ''
 
-@handler.add(MessageEvent)
+@handler.add(JoinEvent)
 def shiyoya(event):
-    groupid = event.source.user_id
-    print(groupid)
+    groupid = event.source.group_id
     reg = Ids(groupid)
     db.session.add(reg)
     db.session.commit()
