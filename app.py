@@ -20,6 +20,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 db = SQLAlchemy(app)
 
 class Ids(db.Model):
+    __tablename__  = "ids"
     id = db.Column(db.Integer,primary_key=True)
     groupid = db.Column(db.String(),nullable=False) 
     def __init__(self, groupid):
