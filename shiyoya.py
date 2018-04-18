@@ -25,7 +25,7 @@ for id in ids:
     # num = random.randrange(30)
     # if num < 2:
     line_bot_api.push_message(id.groupid,TemplateSendMessage(
-        alt_text='Confirm template',
+        alt_text='明日、飲み会しよや！！',
         template=ConfirmTemplate(
         text='明日、飲み会しよや！！',
             actions=[
