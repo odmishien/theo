@@ -16,7 +16,7 @@ line_bot_api = LineBotApi('6w+yDVbtosggFA+eHjGvxbdxvtiNnbo2Szpet/7pvsF2VIoNpMR29
 handler = WebhookHandler('9ae6932fad2fa65e7020d34b3d41d2a2')
 
 #DB接続部分
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 db = SQLAlchemy(app)
 
 class Ids(db.Model):
