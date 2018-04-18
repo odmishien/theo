@@ -41,8 +41,8 @@ def callback():
 
 @handler.add(MessageEvent)
 def shiyoya(event):
-    Id = event.source.user_id
-    print(Id)
+    groupid = event.source.user_id
+    print(groupid)
     if not db.session.query(Ids).filter(Ids.groupid == groupid).count():
         reg = Ids(groupid)
         db.session.add(reg)
