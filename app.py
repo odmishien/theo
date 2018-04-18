@@ -21,7 +21,7 @@ db = SQLAlchemy(app)
 
 class Ids(db.Model):
     id = db.Column(db.Integer,primary_key=True)
-    groupid = db.column(db.String(),nullable=False) 
+    groupid = db.Column(db.String(),nullable=False) 
     def __init__(self, groupid):
         self.groupid = groupid
 @app.route("/callback", methods=['POST'])
