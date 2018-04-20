@@ -25,19 +25,19 @@ ids = Ids.query.all()
 for id in ids:
     num = random.randrange(30)
     if num < 2:
-    line_bot_api.push_message(id.groupid,TemplateSendMessage(
-        alt_text='明日、飲み会しよや！！',
-        template=ConfirmTemplate(
-        text='明日、飲み会しよや！！',
-            actions=[
-                PostbackTemplateAction(
-                    label='アリ',
-                    text='アリ',
-                    data='action=buy&itemid=1'
-                ),
-                MessageTemplateAction(
-                    label='ナシ',
-                    text='ナシ'
-                )
-            ]
-        )))
+        line_bot_api.push_message(id.groupid,TemplateSendMessage(
+            alt_text='明日、飲み会しよや！！',
+            template=ConfirmTemplate(
+            text='明日、飲み会しよや！！',
+                actions=[
+                    PostbackTemplateAction(
+                        label='アリ',
+                        text='アリ',
+                        data='action=buy&itemid=1'
+                    ),
+                    MessageTemplateAction(
+                        label='ナシ',
+                        text='ナシ'
+                    )
+                ]
+            )))
