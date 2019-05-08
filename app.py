@@ -12,8 +12,10 @@ from linebot.models import (
 import os
 
 app = Flask(__name__)
-line_bot_api = LineBotApi('6w+yDVbtosggFA+eHjGvxbdxvtiNnbo2Szpet/7pvsF2VIoNpMR29zVUGCKnheQdBWJBWk1hnNVc2UIjooUdn/vbDm6pHU2EZkG9gUXdjPkoeVUIePuKqipmQYExGPlKeQxYIVv1oU6wbtQXjMBR5gdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('9ae6932fad2fa65e7020d34b3d41d2a2')
+TOKEN = os.environ(['TOKEN')
+HANDLER = os.environ(['HANDLER'])
+line_bot_api = LineBotApi(TOKEN)
+handler = WebhookHandler(HANDLER)
 
 #DB接続部分
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
